@@ -1,0 +1,27 @@
+{% extends "base.html" %} {% block title %}Home{% endblock %} {% block content %}
+    <div id='calendar'></div>
+    <div style="position: absolute; left: 178px; top:20px;">
+        <form action="https://calendar.google.com/calendar/b/3/r" method="get" target="_blank">
+            <button type="submit">ACCESS YOUR GOOGLE CALENDAR HERE</button>
+        </form>
+    </div>
+    <script>
+
+        document.addEventListener('DOMContentLoaded', function () {
+            var calendarEl = document.getElementById('calendar');
+            let calendar = new FullCalendar.Calendar(calendarEl, {
+                googleCalendarApiKey: 'AIzaSyDUKRxApNLGNWyAMeIPqVxJou1Rno3k74s',
+                events: {
+                    googleCalendarId: 'am2997@njit.edu'
+                }
+            });
+            calendar.render();
+        });
+
+    </script>
+
+    <form method="POST">
+
+
+    </form>
+{% endblock %}
